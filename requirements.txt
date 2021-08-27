@@ -1,0 +1,13 @@
+discord.py
+python-dotenv
+requests
+opencv-python
+shutil
+datetime
+pytesseract
+google
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+gspread-dataframe
+pandas
