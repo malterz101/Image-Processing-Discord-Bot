@@ -9,7 +9,7 @@ import datetime
 
 from Get_Screenshot_Data import extract_stats
 from Google_Sheets import Connect_To_Google_Sheets
-from credentials.discord import *
+
 
 
 # This particular tool requires this driver:
