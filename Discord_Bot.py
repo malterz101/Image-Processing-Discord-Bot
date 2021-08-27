@@ -75,7 +75,7 @@ async def on_message(message):
         if len(message.attachments) > 0:
             # This is to ensure we don't download anything malicious - just pictures, THANK YOU
             count = 0
-            stats = None
+            stats = [{}]
             for attachment in message.attachments:
                 if attachment.filename.__contains__('png'):
                     count += 1
