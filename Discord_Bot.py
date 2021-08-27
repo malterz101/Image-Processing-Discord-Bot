@@ -15,8 +15,10 @@ from Google_Sheets import Connect_To_Google_Sheets
 # This particular tool requires this driver:
 # https://towardsdatascience.com/read-text-from-image-with-one-line-of-python-code-c22ede074cac
 
+
+
 # These are global variables, we are able to reference these anywhere in the code without typing the full string
-DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN", "")
+DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN", input("Add token manually"))
 DISCORD_SERVER = "Kingdom 2129"
 
 # This is one of the functions we imported, it is used to read a credentials file and keep it secret
