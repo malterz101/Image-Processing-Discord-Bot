@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0066d557-fc46-4106-a8ac-8557ee2a558b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Discord_Bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Discord_Bot.py" afterDir="false" />
-    </list>
+    <list default="true" id="0066d557-fc46-4106-a8ac-8557ee2a558b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +27,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Discord_Bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="55">
               <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#101#110#0" expanded="true" />
@@ -239,7 +237,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Discord_Bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="55">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#101#110#0" expanded="true" />
