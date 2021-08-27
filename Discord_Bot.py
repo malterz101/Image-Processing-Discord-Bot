@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import requests
 import urllib.request
 import datetime
-import shutil
+# import shutil
 
 from Get_Screenshot_Data import extract_stats
 from Google_Sheets import Connect_To_Google_Sheets
@@ -82,7 +82,8 @@ async def on_message(message):
                     r = requests.get(attachment.url, stream=True)
 
                     with open(image_loc, "wb") as out_file:
-                        shutil.copyfileobj(r.raw, out_file)
+                        # shutil.copyfileobj(r.raw, out_file)
+                        print('')
 
                     try:
                         stats = extract_stats(image_loc)

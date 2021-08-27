@@ -2,7 +2,6 @@ discord.py
 python-dotenv
 requests
 opencv-python
-shutil
 datetime
 pytesseract
 google
