@@ -67,6 +67,9 @@ async def on_message(message):
         if message.content.lower().__contains__('Thes'):
             await message.channel.send("""Instead of a dark lord you would have a queen?""")
 
+        if message.content.lower().__contains__('Bilbo'):
+            await message.channel.send("""That Bilbo Baggins is cracked...""")
+
         if len(message.attachments) > 0:
             # This is to ensure we don't download anything malicious - just pictures, THANK YOU
             count = 0
