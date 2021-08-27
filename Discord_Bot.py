@@ -79,22 +79,22 @@ async def on_message(message):
             for attachment in message.attachments:
                 if attachment.filename.__contains__('png'):
                     count += 1
-                    image_loc = "screenshots/ss-{}-{}.jpg".format(
-                        datetime.datetime.now(),
-                        count
-                    )
-
-                    r = requests.get(attachment.url, stream=True)
-
-                    with open(image_loc, "wb") as out_file:
-                        # shutil.copyfileobj(r.raw, out_file)
-                        print('')
-
-                    try:
-                        stats = extract_stats(image_loc)
-                    except Exception as e:
-                        print(e)
-                        await message.channel.send("Bother burgling and everything to do with it!")
+                    # image_loc = "screenshots/ss-{}-{}.jpg".format(
+                    #     datetime.datetime.now(),
+                    #     count
+                    # )
+                    #
+                    # r = requests.get(attachment.url, stream=True)
+                    #
+                    # with open(image_loc, "wb") as out_file:
+                    #     # shutil.copyfileobj(r.raw, out_file)
+                    #     print('')
+                    #
+                    # try:
+                    #     stats = extract_stats(image_loc)
+                    # except Exception as e:
+                    #     print(e)
+                    #     await message.channel.send("Bother burgling and everything to do with it!")
 
                     stats[0]['image'] = attachment.url
                     stats[0]['discord_user'] = message.author.display_name
