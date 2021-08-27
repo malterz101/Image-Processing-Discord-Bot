@@ -18,7 +18,7 @@ from Google_Sheets import Connect_To_Google_Sheets
 
 
 # These are global variables, we are able to reference these anywhere in the code without typing the full string
-DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN", input("Add token manually"))
+DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN", None)
 DISCORD_SERVER = "Kingdom 2129"
 
 # This is one of the functions we imported, it is used to read a credentials file and keep it secret
