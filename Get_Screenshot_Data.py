@@ -1,5 +1,5 @@
-import cv2
-import pytesseract
+#import cv2
+#import pytesseract
 import re
 import numpy as np
 
@@ -23,24 +23,25 @@ def extract_stats(image_path="screenshots/ss-2021-04-30 17:48:23.226436-1.jpg"):
     deads = None
     T5_KillPoints = None
     T4_KillPoints = None
+    text= None
 
-    img = cv2.imread(image_path, 0)
-    text = pytesseract.image_to_string(img)
+    #img = cv2.imread(image_path, 0)
+    #text = pytesseract.image_to_string(img)
 
     print(text)
     print('__________________________________________________________')
 
     KillPoints = re.findall('.*(Kill Points:.*[1-9])', text)
 
-    img = cv2.threshold(img, 10, 255, cv2.THRESH_TOZERO)[1]
-    text = pytesseract.image_to_string(img)
+    #img = cv2.threshold(img, 10, 255, cv2.THRESH_TOZERO)[1]
+    #text = pytesseract.image_to_string(img)
 
     print(text)
     print('__________________________________________________________')
 
     blur = cv2.GaussianBlur(img, (5, 5), 0)
-    img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
-    text = pytesseract.image_to_string(img)
+    #img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+    #text = pytesseract.image_to_string(img)
 
     print(text)
     print('__________________________________________________________')
@@ -57,26 +58,26 @@ def extract_stats(image_path="screenshots/ss-2021-04-30 17:48:23.226436-1.jpg"):
     print('Kill Points: ', kills)
     print('Deaths: ', deads)
 
-    img = cv2.imread(image_path, 0)
+    #img = cv2.imread(image_path, 0)
 
     # print(img.shape)
-    img = img[265:300, 600:780]
-    img = cv2.threshold(img, 255, 255, cv2.THRESH_TRUNC
-                        )[1]
+    #img = img[265:300, 600:780]
+    #img = cv2.threshold(img, 255, 255, cv2.THRESH_TRUNC
+     #                   )[1]
 
-    text = pytesseract.image_to_string(img)
+    #text = pytesseract.image_to_string(img)
 
     print(text)
     print('__________________________________________________________')
 
     T4_KillPoints = text.replace('.', '').replace(',', '')
 
-    img = cv2.imread(image_path, 0)
-    img = img[290:320, 600:780]
-    img = cv2.threshold(img, 255, 255, cv2.THRESH_TRUNC
-                        )[1]
-
-    text = pytesseract.image_to_string(img)
+    # img = cv2.imread(image_path, 0)
+    # img = img[290:320, 600:780]
+    # img = cv2.threshold(img, 255, 255, cv2.THRESH_TRUNC
+    #                     )[1]
+    #
+    # text = pytesseract.image_to_string(img)
     T5_KillPoints = text.replace('.', '').replace(',', '')
 
     print(text)
@@ -87,11 +88,11 @@ def extract_stats(image_path="screenshots/ss-2021-04-30 17:48:23.226436-1.jpg"):
 
     # THRESHOLDING FOR USERNAME
 
-    img = cv2.imread(image_path, 0)
-
-    img = cv2.threshold(img, 170, 161, cv2.THRESH_TOZERO_INV)[1]
-
-    text = pytesseract.image_to_string(img)
+    # img = cv2.imread(image_path, 0)
+    #
+    # img = cv2.threshold(img, 170, 161, cv2.THRESH_TOZERO_INV)[1]
+    #
+    # text = pytesseract.image_to_string(img)
 
     print(text)
     print('__________________________________________________________')
