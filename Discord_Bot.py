@@ -98,6 +98,7 @@ async def on_message(message):
 
                     stats[0]['image'] = attachment.url
                     stats[0]['discord_user'] = message.author.display_name
+                    stats[0]['date'] = datetime.datetime.now()
                     #stats[0]['discord_id'] = message.author.user.id
                     Connect_To_Google_Sheets(stats)
 
