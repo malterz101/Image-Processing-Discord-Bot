@@ -9,15 +9,15 @@ import shutil
 
 from Get_Screenshot_Data import extract_stats
 from Google_Sheets import Connect_To_Google_Sheets
-
+from credentials.discord import *
 
 
 # This particular tool requires this driver:
 # https://towardsdatascience.com/read-text-from-image-with-one-line-of-python-code-c22ede074cac
 
 # These are global variables, we are able to reference these anywhere in the code without typing the full string
-DISCORD_TOKEN = "ODM2NTQxMDg0NDU1OTI3ODQ4.YIffmA.wcg0tZG1XQbY9ZEbWt4XO8JZ8w8"
-DISCORD_SERVER = "ᴹᴬᴰ House"
+DISCORD_TOKEN = credentials()
+DISCORD_SERVER = "Kingdom 2129"
 
 # This is one of the functions we imported, it is used to read a credentials file and keep it secret
 load_dotenv()
@@ -62,6 +62,10 @@ async def on_message(message):
 
         if message.content.lower().__contains__('Medi'):
             await message.channel.send("""You've been into Farmer Maggot's crops!""")
+
+
+        if message.content.lower().__contains__('Thes'):
+            await message.channel.send("""Instead of a dark lord you would have a queen?""")
 
         if len(message.attachments) > 0:
             # This is to ensure we don't download anything malicious - just pictures, THANK YOU
