@@ -3,7 +3,7 @@
 import re
 import numpy as np
 
-# from google.cloud import vision
+from google.cloud import vision
 import datetime
 
 """
@@ -115,28 +115,28 @@ def extract_stats(image_path="screenshots/ss-2021-04-30 17:48:23.226436-1.jpg"):
     }]
 
 
-# def detect_text_uri(uri=""):
-#     """Detects text in the file located in Google Cloud Storage or on the Web.
-#     """
-#
-#     client = vision.ImageAnnotatorClient()
-#     image = vision.Image()
-#     image.source.image_uri = uri
-#
-#     response = client.text_detection(image=image)
-#     texts = response.text_annotations
-#     print('Texts:')
-#
-#     for text in texts:
-#         print('\n"{}"'.format(text.description))
-#
-#         vertices = (['({},{})'.format(vertex.x, vertex.y)
-#                     for vertex in text.bounding_poly.vertices])
-#
-#         print('bounds: {}'.format(','.join(vertices)))
-#
-#     if response.error.message:
-#         raise Exception(
-#             '{}\nFor more info on error messages, check: '
-#             'https://cloud.google.com/apis/design/errors'.format(
-#                 response.error.message))
+def detect_text_uri(uri=""):
+    """Detects text in the file located in Google Cloud Storage or on the Web.
+    """
+
+    client = vision.ImageAnnotatorClient()
+    image = vision.Image()
+    image.source.image_uri = uri
+
+    response = client.text_detection(image=image)
+    texts = response.text_annotations
+    print('Texts:')
+
+    for text in texts:
+        print('\n"{}"'.format(text.description))
+
+        vertices = (['({},{})'.format(vertex.x, vertex.y)
+                    for vertex in text.bounding_poly.vertices])
+
+        print('bounds: {}'.format(','.join(vertices)))
+
+    if response.error.message:
+        raise Exception(
+            '{}\nFor more info on error messages, check: '
+            'https://cloud.google.com/apis/design/errors'.format(
+                response.error.message))

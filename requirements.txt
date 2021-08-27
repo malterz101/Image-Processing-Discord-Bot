@@ -11,3 +11,4 @@ google-auth-oauthlib
 gspread-dataframe
 pandas
 
+google-cloud-vision
