@@ -7,7 +7,7 @@ import urllib.request
 import datetime
 # import shutil
 
-from Get_Screenshot_Data import extract_stats
+from Get_Screenshot_Data import detect_text_uri
 from Google_Sheets import Connect_To_Google_Sheets
 
 
@@ -79,27 +79,12 @@ async def on_message(message):
             for attachment in message.attachments:
                 if attachment.filename.__contains__('png'):
                     count += 1
-                    # image_loc = "screenshots/ss-{}-{}.jpg".format(
-                    #     datetime.datetime.now(),
-                    #     count
-                    # )
-                    #
-                    # r = requests.get(attachment.url, stream=True)
-                    #
-                    # with open(image_loc, "wb") as out_file:
-                    #     # shutil.copyfileobj(r.raw, out_file)
-                    #     print('')
-                    #
-                    # try:
-                    #     stats = extract_stats(image_loc)
-                    # except Exception as e:
-                    #     print(e)
-                    #     await message.channel.send("Bother burgling and everything to do with it!")
 
-                    stats[0]['image'] = attachment.url
-                    stats[0]['discord_user'] = message.author.display_name
-                    stats[0]['date'] = datetime.datetime.now()
-                    #stats[0]['discord_id'] = message.author.user.id
+                    data = detect_text_uri(attachment.url)
+                    data['image'] = attachment.url
+                    data['discord_user'] = message.author.display_name
+                    data['date'] = datetime.datetime.now()
+
                     Connect_To_Google_Sheets(stats)
 
                     # await message.channel.send(str(stats))
