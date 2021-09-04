@@ -1,7 +1,7 @@
 
 import re
 import numpy as np
-import os
+
 
 from google.cloud import vision
 import datetime
