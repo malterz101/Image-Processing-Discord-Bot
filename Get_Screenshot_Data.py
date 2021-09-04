@@ -29,7 +29,7 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
 
     response = client.text_detection(image=image)
     texts = response.text_annotations
-    print('Texts:')
+
     data = {}
 
     texts = "&&".join(str(texts).split('\\n'))
