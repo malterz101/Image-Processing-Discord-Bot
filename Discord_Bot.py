@@ -87,13 +87,11 @@ async def on_message(message):
 
                     Connect_To_Google_Sheets(stats)
 
-                    # await message.channel.send(str(stats))
+                    await message.channel.send(str(stats))
 
             await message.channel.send("I've picked up {} attachments".format(count))
             await message.channel.send("More than any Baggins deserves.")
 
 
-
-# Everything above just tells the program how to run, this actually sets the whole thing off.
 
 client.run(DISCORD_TOKEN)
