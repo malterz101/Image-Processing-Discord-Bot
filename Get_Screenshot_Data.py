@@ -61,4 +61,6 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
 
+    print('data')
+
     return data
