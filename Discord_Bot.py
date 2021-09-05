@@ -75,7 +75,7 @@ async def on_message(message):
         if len(message.attachments) > 0:
             # This is to ensure we don't download anything malicious - just pictures, THANK YOU
             count = 0
-            stats = [{}]
+            stats = []
             for attachment in message.attachments:
                 if attachment.filename.__contains__('png'):
                     count += 1
@@ -86,6 +86,7 @@ async def on_message(message):
                     data['date'] = datetime.datetime.now()
 
                     Connect_To_Google_Sheets(stats)
+                    stats.append(data)
 
                     await message.channel.send(str(stats))
 
