@@ -12,7 +12,7 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
     """Detects text in the file located in Google Cloud Storage or on the Web.
     """
 
-    credentials = json.dump(json.loads(os.environ.get("GOOGLE_CREDENTIALS", None)), "credentials.json")
+    credentials = json.dump(os.environ.get("GOOGLE_CREDENTIALS", None), "credentials.json")
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
 
     client = vision.ImageAnnotatorClient()
