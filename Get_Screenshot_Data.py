@@ -49,7 +49,7 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
         data['Kill Points'] = ''
 
     try:
-        data['Dead'] = results[20]
+        data['Dead'] = results[17]
     except:
         data['Dead'] = ''
 
