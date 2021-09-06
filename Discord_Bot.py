@@ -49,7 +49,7 @@ async def on_message(message):
         if message.content.lower().__contains__('wu'):
             await message.channel.send("""Never Laugh At Live Dragons, Bilbo, You Fool!""")
 
-        if message.content.lower().__contains__('donc'):
+        if message.content.lower().__contains__('abz'):
             await message.channel.send("""Once caught him making off with the spoons!""")
 
         if message.content.lower().__contains__('wooly'):
@@ -62,15 +62,24 @@ async def on_message(message):
         if message.content.lower().__contains__("pong"):
             await message.channel.send("'More Like A Grocer Than A Burglar’ Indeed!")
 
-        if message.content.lower().__contains__('Medi'):
+        if message.content.lower().__contains__('medi'):
             await message.channel.send("""You've been into Farmer Maggot's crops!""")
 
 
-        if message.content.lower().__contains__('Thes'):
+        if message.content.lower().__contains__('thes'):
             await message.channel.send("""Instead of a dark lord you would have a queen?""")
 
-        if message.content.lower().__contains__('Bilbo'):
+        if message.content.lower().__contains__('bilbo'):
             await message.channel.send("""That Bilbo Baggins is cracked...""")
+            
+        if message.content.lower().__contains__('bill'):
+            await message.channel.send("""Sold to Frodo for 3 times his worth! 12 silver pennies!""")
+
+        if message.content.lower().__contains__('nightmare'):
+            await message.channel.send("""This foe is beyond any of you... RUN!""")
+            
+        if message.content.lower().__contains__('poo'):
+            await message.channel.send("""What a pity that Bilbo did not stab that vile creature, when he had a chance!""")
 
         if len(message.attachments) > 0:
             # This is to ensure we don't download anything malicious - just pictures, THANK YOU
