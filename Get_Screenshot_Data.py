@@ -35,8 +35,10 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
     texts = re.findall(pattern, texts)
 
     pattern = re.compile('.*?([0-9]*)')
-
-    results = list(filter(None, re.findall(pattern, texts[0])))
+    try:
+        results = list(filter(None, re.findall(pattern, texts[0])))
+    except:
+        raise ValueError
 
     try:
         data['Power'] = results[0]
