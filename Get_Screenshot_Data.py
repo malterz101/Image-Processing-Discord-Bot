@@ -25,35 +25,67 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
 
     texts = "&&".join(str(texts).split('\\n')).replace('.', '').replace(',', '')
 
-    try:
-        pattern = re.compile("&&O (.*?)&&", re.MULTILINE|re.DOTALL)
-        data['Name'] = re.findall(pattern, texts)[0].replace(',', '').replace('O ', '')
-    except:
-        data['Name'] = ''
+    if not texts.__contains__('/'):
+        try:
+            pattern = re.compile("&&O (.*?)&&", re.MULTILINE | re.DOTALL)
+            data['Name'] = re.findall(pattern, texts)[0].replace(',', '').replace('O ', '')
+        except:
+            data['Name'] = ''
 
-    pattern = re.compile('(?:&&O .*?&&).*&&')
-    texts = re.findall(pattern, texts)
+        pattern = re.compile('(?:&&O .*?&&).*&&')
+        texts = re.findall(pattern, texts)
 
-    pattern = re.compile('.*?([0-9]*)')
-    try:
-        results = list(filter(None, re.findall(pattern, texts[0])))
-    except:
-        raise ValueError
+        pattern = re.compile('.*?([0-9]*)')
+        try:
+            results = list(filter(None, re.findall(pattern, texts[0])))
+        except:
+            raise ValueError
 
-    try:
-        data['Power'] = results[0]
-    except:
-        data['Power'] = ''
+        try:
+            data['Power'] = results[0]
+        except:
+            data['Power'] = ''
 
-    try:
-        data['Kill Points'] = results[1]
-    except:
-        data['Kill Points'] = ''
+        try:
+            data['Kill Points'] = results[1]
+        except:
+            data['Kill Points'] = ''
 
-    try:
-        data['Dead'] = results[17]
-    except:
-        data['Dead'] = ''
+        try:
+            data['Dead'] = results[17]
+        except:
+            data['Dead'] = results
+    else:
+        try:
+            pattern = re.compile("&&O (.*?)&&", re.MULTILINE|re.DOTALL)
+            data['Name'] = re.findall(pattern, texts)[0].replace(',', '').replace('O ', '')
+        except:
+            data['Name'] = ''
+
+        pattern = re.compile('(?:&&O .*?&&).*&&')
+        texts = re.findall(pattern, texts)
+
+        pattern = re.compile('.*?([0-9]*)')
+        try:
+            results = list(filter(None, re.findall(pattern, texts[0])))
+        except:
+            raise ValueError
+
+        try:
+            data['Power'] = results[0]
+        except:
+            data['Power'] = ''
+
+        try:
+            data['Kill Points'] = results[1]
+        except:
+            data['Kill Points'] = ''
+
+        try:
+            data['Dead'] = results[17]
+        except:
+            data['Dead'] = ''
+
 
     print(data)
     # Only Works in English
