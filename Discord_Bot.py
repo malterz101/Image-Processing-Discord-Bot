@@ -97,8 +97,8 @@ async def on_message(message):
                     data['discord_user'] = message.author.display_name
                     data['date'] = datetime.datetime.now()
 
-                    Connect_To_Google_Sheets(stats)
                     stats.append(data)
+                    Connect_To_Google_Sheets(stats)
 
                     await message.channel.send(str(stats))
 
