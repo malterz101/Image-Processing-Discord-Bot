@@ -92,7 +92,7 @@ async def on_message(message):
                         data = detect_text_uri(attachment.url)
                     except:
                         data = {}
-                        await message.channel.send("Failed to pickup the image, is it the stats page?".format(count))
+                        
                     data['image'] = attachment.url
                     data['discord_user'] = message.author.display_name
                     data['date'] = datetime.datetime.now()
