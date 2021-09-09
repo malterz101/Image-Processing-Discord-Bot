@@ -86,11 +86,12 @@ async def on_message(message):
             count = 0
             stats = []
             for attachment in message.attachments:
-                if attachment.filename.__contains__('png'):
+                if attachment.filename.__contains__('png') OR attachment.filename.__contains__('jpg'):
                     count += 1
                     try:
                         data = detect_text_uri(attachment.url)
                     except:
+                        data = {}
                         await message.channel.send("Failed to pickup the image, is it the stats page?".format(count))
                     data['image'] = attachment.url
                     data['discord_user'] = message.author.display_name
