@@ -39,7 +39,7 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
         try:
             results = list(filter(None, re.findall(pattern, texts[0])))
         except:
-            raise ValueError
+            results = texts
 
         try:
             data['Power'] = results[0]
@@ -57,8 +57,8 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
             data['Dead'] = results
     else:
         try:
-            pattern = re.compile("&&O (.*?)&&", re.MULTILINE|re.DOTALL)
-            data['Name'] = re.findall(pattern, texts)[0].replace(',', '').replace('O ', '')
+            pattern = re.compile(".*([a-zA-Z0-9]*)", re.MULTILINE|re.DOTALL)
+            data['Name'] = re.findall(pattern, texts)[1].replace(',', '').replace('', '')
         except:
             data['Name'] = ''
 
@@ -69,7 +69,7 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
         try:
             results = list(filter(None, re.findall(pattern, texts[0])))
         except:
-            raise ValueError
+            results = [texts]
 
         try:
             data['Power'] = results[0]
@@ -82,35 +82,12 @@ def detect_text_uri(uri="https://media.discordapp.net/attachments/88011350592626
             data['Kill Points'] = ''
 
         try:
-            data['Dead'] = results[17]
+            data['Dead'] = results[5]
         except:
             data['Dead'] = ''
 
 
     print(data)
-    # Only Works in English
-
-    # try:
-    #     pattern = re.compile("(?:.*?INFO)?&&(.*?)&&", re.MULTILINE|re.DOTALL)
-    #     data['Name'] = re.findall(pattern, texts)[0].replace(',', '').replace('O ', '')
-    # except:
-    #     data['Name'] = ''
-    # try:
-    #     pattern = re.compile(".*?Power ?(.*?)&&", re.MULTILINE | re.DOTALL)
-    #     data['Power'] = re.findall(pattern, texts)[0].replace(',', '').replace('.', '')
-    # except:
-    #     data['Power'] = ''
-    # try:
-    #     pattern = re.compile(".*?Kill Points ?(.*?)&&", re.MULTILINE | re.DOTALL)
-    #     data['Kill Points'] = re.findall(pattern, texts)[0].replace(',', '').replace('.', '')
-    # except:
-    #     data['Kill Points'] = ''
-    # try:
-    #     pattern = re.compile("(?:.*?Dead)?&&(.*?)&&", re.MULTILINE | re.DOTALL)
-    #     data['Deads'] = re.findall(pattern, texts)[0].replace(',', '').replace('.', '')
-    # except:
-    #     data['Deads'] = ''
-
 
 
     if response.error.message:
