@@ -86,7 +86,7 @@ async def on_message(message):
             count = 0
             stats = []
             for attachment in message.attachments:
-                if attachment.filename.__contains__('png') OR attachment.filename.__contains__('jpg'):
+                if attachment.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')):
                     count += 1
                     try:
                         data = detect_text_uri(attachment.url)
