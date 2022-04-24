@@ -8,4 +8,4 @@ Once users have uploaded their image to Discord with the appropriate tag, it is 
 
 The bot is then built to extract specific values using regex, in line with ROK statistic pages.
 
-![alt text](https://github.com/malterz101/mage-Processing-Discord-Bot/blob/master/Baggins%20Bot%20Usage.png?raw=true)
+![alt text](https://github.com/malterz101/Image-Processing-Discord-Bot/blob/master/Baggins%20Bot%20Usage.png?raw=true)
